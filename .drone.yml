@@ -18,8 +18,8 @@ steps:
     repo: ecointet/harness-webapp-demo
     dockerfile: nginx/Dockerfile
     context: nginx/
-    #tag: pullrequest-${DRONE_PULL_REQUEST}
-    tag: "stable1"
+    tag: pullrequest2-${DRONE_PULL_REQUEST}
+    #tag: "stable1"
 
 - name: HarnessToDeploy
   image: rlachhman/drone-harness-trigger:1.0.0
@@ -33,8 +33,8 @@ steps:
     harnesswebhookid: 
       from_secret: harness_webhookid
     harnessartifactname: "ecointet_harness-webapp-demo"
-    #artifactversion: pullrequest-${DRONE_PULL_REQUEST}
-    artifactversion: "stable1"
+    artifactversion: pullrequest2-${DRONE_PULL_REQUEST}
+    #artifactversion: "stable1"
     harnessservicename: "ecointet-webapp2"
 
 #Notification Phase
