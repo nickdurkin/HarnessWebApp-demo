@@ -6,7 +6,7 @@ steps:
 - name: CodeUnitTests
   image: golang
   commands:
-  - echo "SonarQube Test Done"
+  - echo "SonarQube Test Done (pullrequest-${DRONE_PULL_REQUEST}) - pull request was from ${DRONE_COMMIT_AUTHOR}"
 
 ## Docker Image Build and push
 - name: DockerImageCreation  
