@@ -82,9 +82,9 @@ var interval = null;
         document.querySelector('#log').innerHTML += `${msg}\n`
       }
 
-      const cf = initialize('8b42e435-ed82-4c21-9579-39ae843964a6', {
-    identifier: "everyone",      // Target identifier
-    name: "Everyone",                  // Optional target name
+      const cf = initialize('61aee676-f45e-4b92-ad6d-3cdb38679f4d', {
+    identifier: "all",      // Target identifier
+    name: "all",                  // Optional target name
     attributes: {                            // Optional target attributes
       email: 'etienne.cointet@harness.io'
     }
@@ -92,6 +92,7 @@ var interval = null;
 
   cf.on(Event.READY, flags => {
         console.log(JSON.stringify(flags, null, 2))
+		
       })
 
       cf.on(Event.CHANGED, flagInfo => {
@@ -196,7 +197,11 @@ function loadvaccin(){
 
 function goto($hashtag){
 	 //document.getElementById($hashtag).style.visibility = "visible";
-	 //if ($hashtag == "home") document.getElementById("error").style.visibility = "hidden";
+	 if ($hashtag == "home")
+	 	$("#error").hide();
+	 if ($hashtag == "error")
+	 	$("#"+$hashtag).show();
+
      document.location = "index.php#" + $hashtag;
 }
 
@@ -214,84 +219,7 @@ function DoAction(v_action, v_value)
 			
 }
 
-		window.count_wallet=0;
-		function Checkout(v_metric, v_value)
-			{
-				v_value = window.count_wallet;
-				
-				if (v_value <= 0)
-				{
-					$("div.shoppingcart" ).html("<p>EMPTY!</p>");
-					return;
-				}
-
-				$( ".shoppingcart" ).show();
-				$("div.shoppingcart" ).html("<p><img src='img/loader.gif' width='40px' marging-bottom:'15px'></p>");
-				console.log("Try to send ["+v_metric+"] and ["+v_value+"]");
-				$.ajax({
-					type: "GET",
-					url: '/api-signalfx.php',
-					data: {metric: v_metric, value: v_value},
-					success: function(data){
-						if (data == "-1")
-							$("div.shoppingcart" ).html("<p>ERROR</p>");
-						else
-						{
-						console.log(data);
-						window.count_wallet = 0;
-						$("div.shoppingcart" ).html("<p>DONE!</p>");
-						}
-					}
-				});
-						
-			}
-
-
-			function AddToCart(v_metric, v_value)
-			{
-				$( ".shoppingcart" ).show();
-				$("div.shoppingcart" ).html("<p><img src='img/loader.gif' width='40px' marging-bottom:'15px'></p>");
-				console.log("Try to send ["+v_metric+"] and ["+v_value+"]");
-				$.ajax({
-					type: "GET",
-					url: '/api-signalfx.php',
-					data: {metric: v_metric, value: v_value},
-					success: function(data){
-						//if (data == "-1")
-						//	$("div.shoppingcart" ).html("<p>ERROR</p>");
-						//else
-						//{
-						console.log(data);
-						window.count_wallet = parseInt(window.count_wallet) + parseInt(v_value);
-						$("div.shoppingcart" ).html("<p>"+window.count_wallet+"</p>");
-						//}
-					}
-				});
-						
-			}
-
-			function Simulation()
-			{
-				var v_size = 60;
-				$( ".shoppingcart" ).show();
-				$("div.shoppingcart" ).html("<p><img src='img/loader.gif' width='40px' marging-bottom:'15px'></p>");
-				alert("Simulation started for "+v_size+" seconds! Please watch the SignalFx Dashboard...");
-				//console.log("Simulation starting...");
-				$.ajax({
-					type: "GET",
-					url: '/simulation.php',
-					data: {size: v_size},
-					success: function(data){
-						console.log(data);
-						//alert("Simulation Finised!");
-						$("div.shoppingcart" ).html("<p>DONE</p>");
-					}
-				});
-						
-			}
-
-			
-
+	
 		
 
 
@@ -439,7 +367,7 @@ function DoAction(v_action, v_value)
 		
 
 			<!-- Start ERROR Area -->
-			<section class="service-area section-gap" id="error" style="visibility: visible;">
+			<section class="service-area section-gap" id="error" name="error" style="display: none;">
 				<div class="container">
 					<div class="row d-flex justify-content-center">
 						<div class="col-md-8 pb-40 header-text">
