@@ -2,7 +2,7 @@ kind: pipeline
 name: default
 
 ##Test Phase
-steps:
+
 - name: CodeUnitTests
   image: golang
   commands:
