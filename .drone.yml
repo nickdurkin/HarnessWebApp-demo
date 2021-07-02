@@ -22,7 +22,7 @@ steps:
     #tag: "stable1"
 
 - name: HarnessToDeploy
-  image: rlachhman/drone-harness-trigger:1.0.0
+  image: rlachhman/drone-harness-trigger-REMOVE:1.0.0
   settings:  
     accountid:
       from_secret: harness_accountid
