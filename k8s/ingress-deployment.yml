@@ -1,12 +1,10 @@
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-  name: ingress-harness-platform-demo
-  namespace: production
+  name: ingress-{{.Values.name}}
   annotations:
-    kubernetes.io/ingress.global-static-ip-name: "harness-platform-demo-ip"
+    kubernetes.io/ingress.global-static-ip-name: {{.Values.staticIp}}
 spec:
   backend:
-    serviceName: nodeport-harness-platform-demo
-    servicePort: 8000
-    
+    serviceName: nodeport-{{.Values.name}}
+    servicePort: {{.Values.servicePort}}
