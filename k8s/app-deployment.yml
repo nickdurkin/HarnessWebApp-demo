@@ -25,4 +25,4 @@ spec:
       volumes:
       - name: volume
         persistentVolumeClaim:
-          claimName: harness-platfor-demo-pvc
+          claimName: harness-platform-demo-pvc
