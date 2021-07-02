@@ -16,8 +16,8 @@ serviceType: NodePort
 # targetPort is where application is listening on inside the container.
 servicePort: 8000
 serviceTargetPort: 8000
-staticIp: "ecointet-webapp-static-ip"
-volumeClaim: "ecointet-pvc"
+staticIp: "harness-platform-demo-ip"
+volumeClaim: "harness-platform-demo-pvc"
 
 # Specify all environment variables to be added to the container.
 # The following two maps, config and secrets, are put into a ConfigMap
