@@ -1,4 +1,4 @@
-name: <+infrastructure.infrastructureDefinition.spec.releaseName>-<+pipeline.variables.githublogin>
+name: harness-webapp-demo-<+pipeline.variables.githublogin>
 replicas: 2
 
 image: <+artifact.image>
