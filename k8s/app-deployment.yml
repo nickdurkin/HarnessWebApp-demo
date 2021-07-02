@@ -7,7 +7,7 @@ spec:
   selector:
     matchLabels:
       app: ecointet-webapp
-  replicas: 2 # amount of pods must be > 1
+  replicas: 1 # amount of pods must be > 1
   template:
     metadata:
       labels:
@@ -25,4 +25,4 @@ spec:
       volumes:
       - name: volume
         persistentVolumeClaim:
-          claimName: ecointet-pvc-2
+          claimName: harness-platfor-demo-pvc

@@ -4,7 +4,7 @@ metadata:
   name: ingress-ecointet-webapp
   namespace: production
   annotations:
-    kubernetes.io/ingress.global-static-ip-name: "ecointet-webapp-static-ip-3"
+    kubernetes.io/ingress.global-static-ip-name: "harness-platform-demo-ip"
 spec:
   backend:
     serviceName: nodeport-ecointet-webapp
