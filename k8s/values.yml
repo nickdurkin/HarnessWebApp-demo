@@ -1,4 +1,4 @@
-name: <+stage.variables.name>
+name: <+infrastructure.infrastructureDefinition.spec.releaseName>-<+pipeline.variables.githublogin>
 replicas: 2
 
 image: <+artifact.image>
