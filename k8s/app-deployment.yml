@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: ecointet-webapp
-        image: ${values.image}
+        image: {{.Values.image}}
         ports:
         - containerPort: 8000
           name: port-name
