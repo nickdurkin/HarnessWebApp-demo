@@ -24,7 +24,11 @@ COPY supervisord.conf /etc/
 
 COPY ./10-nginx.conf /etc/collectd/managed_config/
 ADD  src/ /usr/data/
-RUN  chmod 777 -R /usr/data/
+
+ARG GITHUBLOGIN
+RUN echo $GITHUBLOGIN > /usr/data/data/githublogin.txt
+
+RUN  chmod -R 777 /usr/data/
 EXPOSE 8000
 
-CMD /usr/bin/supervisord -n -c /etc/supervisord.conf && chmod 777 -R /data-ext
+CMD /usr/bin/supervisord -n -c /etc/supervisord.conf && chmod -R 777 /data-ext

@@ -70,9 +70,18 @@ if (!isset($_SESSION['buyer']))
 
 <script>
 var interval = null;
+var target = "ecointet"
 </script>
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+<script>
+// GET GITHUBLOGIN variable
+$.get("/data/githublogin.txt", function( my_var ) {
+	githublogin = my_var;
+});
+</script>
+
 
 <!-- Harness Feature Flag Module -->
 <script type="module">
@@ -83,11 +92,7 @@ var interval = null;
       }
 
       const cf = initialize('61aee676-f45e-4b92-ad6d-3cdb38679f4d', {
-    identifier: "all",      // Target identifier
-    name: "all",                  // Optional target name
-    attributes: {                            // Optional target attributes
-      email: 'etienne.cointet@harness.io'
-    }
+    identifier: githublogin      // Target identifier
   });
 
   cf.on(Event.READY, flags => {
