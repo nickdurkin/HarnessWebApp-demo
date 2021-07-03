@@ -9,20 +9,22 @@
     <pre id="log"></pre>
 
     <script type="module">
-      import { initialize, Event } from 'https://unpkg.com/@harnessio/ff-javascript-client-sdk@1.3.7/dist/sdk.client.js'
+      import { initialize, Event } from 'https://unpkg.com/@harnessio/ff-javascript-client-sdk@1.4.4/dist/sdk.client.js'
 
       const log = msg => {
         document.querySelector('#log').innerHTML += `${msg}\n`
       }
 
-      const cf = initialize('8b42e435-ed82-4c21-9579-39ae843964a6', {
-    identifier: "everyone",      // Target identifier
-    name: "Everyone",                  // Optional target name
-    attributes: {                            // Optional target attributes
-      email: 'etienne.cointet@harness.io'
-    }
-  });
-      
+      const cf = initialize(
+        'c8451467-ea97-44cb-8f34-f8275bde03fa',
+        {
+          identifier: 'ecointet',
+          attributes: {
+            lastUpdated: Date(),
+            host: location.href
+          }
+        }
+      )
 
       cf.on(Event.READY, flags => {
         log(JSON.stringify(flags, null, 2))

@@ -85,19 +85,24 @@ $.get("/data/githublogin.txt", function( my_var ) {
 
 <!-- Harness Feature Flag Module -->
 <script type="module">
-      import { initialize, Event } from 'https://unpkg.com/@harnessio/ff-javascript-client-sdk@1.3.7/dist/sdk.client.js'
+      import { initialize, Event } from 'https://unpkg.com/@harnessio/ff-javascript-client-sdk@1.4.4/dist/sdk.client.js'
 
       const log = msg => {
         document.querySelector('#log').innerHTML += `${msg}\n`
       }
-
-      const cf = initialize('61aee676-f45e-4b92-ad6d-3cdb38679f4d', {
-    identifier: githublogin      // Target identifier
+//c8451467-ea97-44cb-8f34-f8275bde03fa //platform-demo
+//61aee676-f45e-4b92-ad6d-3cdb38679f4d //uat
+      const cf = initialize('c8451467-ea97-44cb-8f34-f8275bde03fa', {
+    identifier: window.githublogin,
+	attributes: {
+            lastUpdated: Date(),
+            host: location.href
+          }     // Target identifier
   });
 
   cf.on(Event.READY, flags => {
         console.log(JSON.stringify(flags, null, 2))
-		
+		console.log("identifier: ["+window.githublogin+"]")
       })
 
       cf.on(Event.CHANGED, flagInfo => {
