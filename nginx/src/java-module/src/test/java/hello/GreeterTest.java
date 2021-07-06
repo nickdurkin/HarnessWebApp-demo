@@ -10,23 +10,23 @@ public class GreeterTest {
   private Greeter greeter = new Greeter();
 
   @Test
-  public void greeterSaysHello() {
+  public void Menu() {
     assertThat(greeter.sayHello(), containsString("Harness"));
   }
 @Test
-  public void greeterSaysHello2() {
+  public void iPhoneSpecialFeatures() {
     assertThat(greeter.sayHello(), containsString("demos"));
   }
 @Test
-  public void greeterSaysHello3() {
+  public void LandingPageImage() {
     assertThat(greeter.sayHello(), containsString("demos"));
   }
 @Test
-  public void greeterSaysHello4() {
+  public void AuthentificationModule() {
     assertThat(greeter.sayHello(), containsString("demos"));
   }
 @Test
-  public void greeterSaysHello5() {
+  public void BackgroundWithAutoSize() {
     assertThat(greeter.sayHello(), containsString("demos"));
   }
 }

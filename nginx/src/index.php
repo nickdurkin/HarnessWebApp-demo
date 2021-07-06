@@ -96,7 +96,7 @@ $.get("/data/githublogin.txt", function( my_var ) {
     identifier: window.githublogin,
 	attributes: {
             lastUpdated: Date(),
-            host: location.href
+            browser: window.navigator.userAgent
           }     // Target identifier
   });
 

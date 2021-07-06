@@ -1,2 +1,2 @@
-/data/nginx/src/java-module/src/main/java/hello/HelloWorld.java
-/data/nginx/src/java-module/src/main/java/hello/Greeter.java
+/data/src/main/java/hello/HelloWorld.java
+/data/src/main/java/hello/Greeter.java
