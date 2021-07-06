@@ -21,7 +21,8 @@
           identifier: 'ecointet',
           attributes: {
             lastUpdated: Date(),
-            host: location.href
+            host: location.href,
+            browser: navigator.userAgent
           }
         }
       )
