@@ -14,7 +14,7 @@ public class GreeterTest {
     assertThat(greeter.sayHello(), containsString("Harness"));
   }
 @Test
-  public void iPhoneSpecialFeatures() {
+  public void WebAppInit() {
     assertThat(greeter.sayHello(), containsString("demos"));
   }
 @Test

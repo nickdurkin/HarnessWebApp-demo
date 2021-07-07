@@ -1,41 +1,40 @@
 <?php
 
-
+include "../auth-module.php";
 //API VERIFICATION
 if ($_GET['func'] == 'verif')
 {
-    $url = "http://harness-app.cointet.com/result.php";
-
-    $value = @file_get_contents($url);
-    if (stripos($value, "captain-america"))
-       $info = false;
+    if ($auth_version != 1)
+       $info = true;
     else
-        $info = true;
+       $info = false;
     
     echo json_encode(buildVerif($info, $value));
 }
 
 function buildVerif($error, $value)
 {
-    $data[] = array (
-        "hostname"  => "my-web-server",
-        "level" => "warning",
-        "message"   => "bad display on iPhone11 - bad layer position for the user",
-        "@timestamp" => time()
-    );
-
     if ($error)
     {
-    $newtime = time() - 5;
-    $data[] = array (
-        "hostname"  => "my-web-server",
-        "level" => "error",
-        "message"   => "Image: not Canary Captain America",
-        "@timestamp" => $newtime
-    );
+        $newtime = time() - 5;
+        $data[] = array (
+            "hostname"  => "my-web-server",
+            "level" => "error",
+            "message"   => "Image: not Canary Captain America",
+            "@timestamp" => $newtime
+        );
+    }
+    else
+    {
+        $data[] = array (
+            "hostname"  => "my-web-server",
+            "level" => "warning",
+            "message"   => "bad display on iPhone11 - bad layer position for the user",
+            "@timestamp" => time()
+        );
     }
 
-
+/*
     $error_message = get_string_between($value, 'id="error_message">', "</div>");
     if (strlen($error_message) > 1)
     {
@@ -48,7 +47,7 @@ function buildVerif($error, $value)
         );
 
     }
-
+*/
 //if ($error)
   //  array_push($data, $dataerror);
 
