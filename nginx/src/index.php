@@ -78,10 +78,10 @@ var target = "ecointet"
 <script>
 // GET GITHUBLOGIN variable
 $.get("/data/githublogin.txt", function( my_var ) {
-	githublogin = my_var;
+	githublogin = my_var.trim();
 });
 //debug
-githublogin = "ecointet2";
+//githublogin = "ecointet2";
 </script>
 
 
@@ -105,7 +105,8 @@ githublogin = "ecointet2";
   cf.on(Event.READY, flags => {
         console.log(JSON.stringify(flags, null, 2))
 		console.log("identifier: ["+window.githublogin+"]")
-      })
+		$("#user-menu").html(window.githublogin);
+		})
 
       cf.on(Event.CHANGED, flagInfo => {
         if (flagInfo.deleted) {
@@ -217,6 +218,11 @@ function goto($hashtag){
      document.location = "index.php#" + $hashtag;
 }
 
+function loadcustomer(){
+	 //document.getElementById($hashtag).style.visibility = "visible";
+     document.location = "index.php?id=" + $( "#customer" ).val();
+}
+
 function DoAction(v_action, v_value)
 {
 	console.log("Updating customer to :"+v_value);
@@ -270,11 +276,11 @@ function DoAction(v_action, v_value)
 				      </div>
 				      <nav id="nav-menu-container">
 				        <ul class="nav-menu">
-				          <li class="menu-active"><a href="#home">Home</a></li>
+				          <li class="menu-active" id="user-menu"><a href="#home">Home</a></li>
 				          <li><a href="#service">share with people</a></li>
 						  <li class="menu-has-children"><a href="">CONFIG</a>
 				            <ul>
-				              <li>Customer: <form><input type="text" id="customer" value="<?php echo $_SESSION['buyer']; ?>"></form></li>
+				              <li>Customer: <form><input type="text" id="customer" value="<?php echo $_SESSION['buyer']; ?>"></form><a onclick="loadcustomer()" href="#"><img width="15px" src="img/play-icon.png"></a></li>
 							  <li>Logo: <form><input type="text" id="customer-logo" value="<?php echo $_SESSION['logo']; ?>"></form></li>
 							  <li>Background: <form><input type="text" id="background" value="<?php echo $_SESSION['background']; ?>"></form></li>
 							  <li>Link: <form><input type="text" id="link" value="<?php echo $_SESSION['link']; ?>"></form></li>
