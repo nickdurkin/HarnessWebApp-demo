@@ -95,11 +95,8 @@ $.get("/data/githublogin.txt", function( my_var ) {
 //c8451467-ea97-44cb-8f34-f8275bde03fa //platform-demo
 //61aee676-f45e-4b92-ad6d-3cdb38679f4d //uat
       const cf = initialize('c8451467-ea97-44cb-8f34-f8275bde03fa', {
-    identifier: window.githublogin,
-	attributes: {
-            lastUpdated: Date(),
-            browser: window.navigator.userAgent
-          }     // Target identifier
+    identifier: "ecointet"
+
   });
 
   cf.on(Event.READY, flags => {
