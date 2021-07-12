@@ -80,6 +80,8 @@ var target = "ecointet"
 $.get("/data/githublogin.txt", function( my_var ) {
 	githublogin = my_var;
 });
+//debug
+window.githublogin = "ecointet2";
 </script>
 
 
