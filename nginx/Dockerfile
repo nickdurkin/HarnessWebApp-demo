@@ -1,7 +1,7 @@
-#FROM php:7.1-fpm      
-FROM trafex/alpine-nginx-php7
-#RUN apt-get update && \
-#    apt-get install -y vim curl wget build-essential nginx supervisor gnupg2
+FROM php:7.1-fpm      
+
+RUN apt-get update && \
+    apt-get install -y vim curl wget build-essential nginx supervisor gnupg2
 
 #RUN echo "deb http://packages.dotdeb.org jessie all" > /etc/apt/sources.list.d/dotdeb.list && \
 #    wget https://www.dotdeb.org/dotdeb.gpg && \
