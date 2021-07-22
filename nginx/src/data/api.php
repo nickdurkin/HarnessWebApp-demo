@@ -17,7 +17,7 @@ function buildVerif($error, $value)
     if ($error)
     {
         $newtime = time() - 5;
-        $data["log"] = array (
+        $data = array (
             "hostname"  => "my-web-server",
             "level" => "error",
             "message"   => "Image: not Canary Captain America",
@@ -26,10 +26,10 @@ function buildVerif($error, $value)
     }
     else
     {
-        $data["log"] = array (
+        $data = array (
             "hostname"  => "my-web-server",
-            "level" => "warning",
-            "message"   => "bad display on iPhone11 - bad layer position for the user",
+            "level" => "ok",
+            "message"   => "No issue detected",
             "@timestamp" => time()
         );
     }
