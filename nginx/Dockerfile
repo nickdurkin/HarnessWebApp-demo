@@ -1,5 +1,5 @@
 #FROM php:7.1-fpm      
-FROM webdevops/php-nginx:7.1-alpine
+FROM trafex/alpine-nginx-php7
 #RUN apt-get update && \
 #    apt-get install -y vim curl wget build-essential nginx supervisor gnupg2
 
