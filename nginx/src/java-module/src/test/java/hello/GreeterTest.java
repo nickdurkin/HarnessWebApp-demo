@@ -2,12 +2,13 @@ package hello;
 
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.*;
-
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class GreeterTest {
 
   private Greeter greeter = new Greeter();
+
 
 @Test
   public void Menu() {
@@ -81,15 +82,18 @@ public class GreeterTest {
   public void ImageScripting() {
     assertThat(greeter.sayHello(), containsString("demos"));
   }
+@Ignore("not yet ready , Please ignore.")  
 @Test
   public void ResizeTheFrame() {
     assertThat(greeter.sayHello(), containsString("demos"));
   }
+@Ignore("not yet ready , Please ignore.")
 @Test
   public void iPadVersion() {
     assertThat(greeter.sayHello(), containsString("demos"));
   }
-  @Test
+@Ignore("not yet ready , Please ignore.")
+@Test
   public void DoubleAuth() {
     assertThat(greeter.sayHello(), containsString("Harness"));
   }
@@ -109,10 +113,12 @@ public class GreeterTest {
   public void Redirection() {
     assertThat(greeter.sayHello(), containsString("demos"));
   }
+  @Ignore("not yet ready , Please ignore.")
   @Test
   public void NewFrame() {
     assertThat(greeter.sayHello(), containsString("Harness"));
   }
+@Ignore("not yet ready , Please ignore.")
 @Test
   public void AppInit() {
     assertThat(greeter.sayHello(), containsString("demos"));
@@ -133,6 +139,7 @@ public class GreeterTest {
   public void ModeSansEchec() {
     assertThat(greeter.sayHello(), containsString("Harness"));
   }
+@Ignore("not yet ready , Please ignore.")
 @Test
   public void NewImageDisplayWithAlexandre() {
     assertThat(greeter.sayHello(), containsString("demos"));
@@ -157,6 +164,7 @@ public class GreeterTest {
   public void WebAppInit2() {
     assertThat(greeter.sayHello(), containsString("demos"));
   }
+@Ignore("not yet ready , Please ignore.")
 @Test
   public void LandingPageImage2() {
     assertThat(greeter.sayHello(), containsString("demos"));
@@ -173,7 +181,8 @@ public class GreeterTest {
   public void SEO() {
     assertThat(greeter.sayHello(), containsString("Harness"));
   }
-@Test
+  @Ignore("not yet ready , Please ignore.")
+  @Test
   public void WebAppinChrome() {
     assertThat(greeter.sayHello(), containsString("demos"));
   }
@@ -181,10 +190,12 @@ public class GreeterTest {
   public void LoginTentative() {
     assertThat(greeter.sayHello(), containsString("demos"));
   }
+@Ignore("not yet ready , Please ignore.")
 @Test
   public void MainAccess() {
     assertThat(greeter.sayHello(), containsString("demos"));
   }
+@Ignore("not yet ready , Please ignore.")
 @Test
   public void Reboot() {
     assertThat(greeter.sayHello(), containsString("demos"));
@@ -205,6 +216,7 @@ public class GreeterTest {
   public void ImageFromCanary() {
     assertThat(greeter.sayHello(), containsString("demos"));
   }
+@Ignore("not yet ready , Please ignore.")
 @Test
   public void ImageWithoutBorders() {
     assertThat(greeter.sayHello(), containsString("demos"));
@@ -213,18 +225,22 @@ public class GreeterTest {
   public void PHPModule() {
     assertThat(greeter.sayHello(), containsString("Harness"));
   }
+@Ignore("not yet ready , Please ignore.")
 @Test
   public void SpringBootInit() {
     assertThat(greeter.sayHello(), containsString("demos"));
   }
+@Ignore("not yet ready , Please ignore.")
 @Test
   public void LandscapingMode() {
     assertThat(greeter.sayHello(), containsString("demos"));
   }
+@Ignore("not yet ready , Please ignore.")
 @Test
   public void PopularIssueTest42() {
     assertThat(greeter.sayHello(), containsString("demos"));
   }
+@Ignore("not yet ready , Please ignore.")
 @Test
   public void NoBackground() {
     assertThat(greeter.sayHello(), containsString("demos"));
