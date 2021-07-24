@@ -11,7 +11,7 @@ public class GreeterTest {
 
 
 @Test
-  public void Menu() {
+  public void a_HomePage_LoadingTest() {
     assertThat(greeter.sayHello(), containsString("Harness"));
   }
 @Test
@@ -135,6 +135,7 @@ public class GreeterTest {
   public void Dashboarding() {
     assertThat(greeter.sayHello(), containsString("demos"));
   }
+  @Ignore("not yet ready , Please ignore.")
   @Test
   public void ModeSansEchec() {
     assertThat(greeter.sayHello(), containsString("Harness"));
@@ -144,14 +145,17 @@ public class GreeterTest {
   public void NewImageDisplayWithAlexandre() {
     assertThat(greeter.sayHello(), containsString("demos"));
   }
+@Ignore("not yet ready , Please ignore.")
 @Test
   public void SEverification() {
     assertThat(greeter.sayHello(), containsString("demos"));
   }
+@Ignore("not yet ready , Please ignore.")
 @Test
   public void FullTestWithFakeData() {
     assertThat(greeter.sayHello(), containsString("demos"));
   }
+@Ignore("not yet ready , Please ignore.")
 @Test
   public void MainIssue() {
     assertThat(greeter.sayHello(), containsString("demos"));
@@ -160,6 +164,7 @@ public class GreeterTest {
   public void Menu2() {
     assertThat(greeter.sayHello(), containsString("Harness"));
   }
+@Ignore("not yet ready , Please ignore.")
 @Test
   public void WebAppInit2() {
     assertThat(greeter.sayHello(), containsString("demos"));
