@@ -202,7 +202,7 @@ $.get("/data/githublogin.txt", function( my_var ) {
 function loadvaccin(){
 	window.interval = setInterval(function(){
       $('#vaccin').load('result.php');
- },2000);
+ },5000);
 }
 
 function goto($hashtag){
