@@ -1,5 +1,5 @@
 name: harness-webapp-demo-<+pipeline.variables.githublogin>
-replicas: 4
+replicas: 2
 
 image: <+artifact.image>
 #dockercfg: ${artifact.source.dockerconfig}
